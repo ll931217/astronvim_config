@@ -1,0 +1,20 @@
+-- enable or disable highlighting for extra plugins
+return {
+  aerial = true,
+  beacon = false,
+  bufferline = true,
+  dashboard = true,
+  highlighturl = true,
+  hop = true,
+  indent_blankline = true,
+  lightspeed = false,
+  ["neo-tree"] = false,
+  notify = true,
+  ["nvim-tree"] = true,
+  ["nvim-web-devicons"] = true,
+  rainbow = true,
+  symbols_outline = false,
+  telescope = true,
+  vimwiki = false,
+  ["which-key"] = true,
+}

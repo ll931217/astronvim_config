@@ -1,0 +1,6 @@
+-- Example disabling formatting for a specific language server
+-- gopls = { -- override table for require("lspconfig").gopls.setup({...})
+--   on_attach = function(client, bufnr)
+--     client.resolved_capabilities.document_formatting = false
+--   end
+-- }
