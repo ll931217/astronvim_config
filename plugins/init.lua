@@ -3,19 +3,7 @@ return {
   -- ["Darazaki/indent-o-matic"] = { disable = true },
 
   -- Flutter
-  {
-    'akinsho/flutter-tools.nvim',
-    requires = 'nvim-lua/plenary.nvim',
-    after = 'mason-lspconfig.nvim',
-    config = function()
-      require('flutter-tools').setup{
-        ui = {
-          notification_style = 'plugin'
-        },
-        lsp = astronvim.lsp.server_settings('dartls'),
-      }
-    end,
-  },
+  { 'akinsho/flutter-tools.nvim' },
 
   -- FUN!!!
   {
@@ -47,12 +35,14 @@ return {
   },
   {
     "kylechui/nvim-surround",
+    lazy = false,
     tag = "*",
     config = function() require("nvim-surround").setup() end,
   },
   -- Remembers the last location the cursor was located in file
   {
     "vladdoster/remember.nvim",
+    lazy = false,
     config = function()
       require("remember").setup({
         open_folds = true,
@@ -61,6 +51,7 @@ return {
   },
   {
     "phaazon/hop.nvim",
+    lazy = false,
     branch = "v2",
     config = function()
       -- you can configure Hop the way you like here; see :h hop-config
@@ -68,38 +59,4 @@ return {
     end
   },
   { "nvim-telescope/telescope-hop.nvim" },
-
-  -- Debugging
-  {
-    "mxsdev/nvim-dap-vscode-js",
-    requires = {"mfussenegger/nvim-dap"}
-  },
-  {
-    'microsoft/vscode-js-debug',
-    opt = true,
-    run = 'npm install --legacy-peer-deps && npm run compile' ,
-  },
-  {
-    "mfussenegger/nvim-dap",
-    opt = true,
-    module = "dap",
-    requires = {
-      -- "theHamsta/nvim-dap-virtual-text",
-      "rcarriga/nvim-dap-ui",
-      -- "mfussenegger/nvim-dap-python",
-      "nvim-telescope/telescope-dap.nvim",
-      -- { "leoluz/nvim-dap-go", module = "dap-go" },
-      -- { "jbyuki/one-small-step-for-vimkind", module = "osv" },
-      { "mxsdev/nvim-dap-vscode-js" },
-      {
-        "microsoft/vscode-js-debug",
-        opt = true,
-        run = "npm install --legacy-peer-deps && npm run compile",
-      },
-    },
-    config = function()
-      require "configs.dap"
-    end,
-    disable = vim.fn.has "win32" == 1,
-  },
 }

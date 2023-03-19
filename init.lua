@@ -45,30 +45,15 @@ local config = {
       path = 250,
     },
   },
-
-  -- Modify which-key registration (Use this with mappings table in the above.)
-  -- ["which-key"] = {
-  --   -- Add bindings which show up as group name
-  --   register = {
-  --     -- first key is the mode, n == normal mode
-  --     n = {
-  --       -- second key is the prefix, <leader> prefixes
-  --       ["<leader>"] = {
-  --         -- third key is the key to bring up next level and its displayed
-  --         -- group name in which-key top level menu
-  --         ["b"] = { name = "Buffer" },
-  --       },
-  --     },
-  --   },
-  -- },
 }
 
-if vim.g.neovide then
-  vim.opt.guifont = { 'FiraCode Nerd Font Mono,codicon Nerd Font', 'h16' }
+require('user.neovide')
 
-  vim.g.neovide_floating_blur_amount_x = 2.0
-  vim.g.neovide_floating_blur_amount_y = 2.0
-  vim.g.neovide_cursor_vfx_mode = "wireframe"
-end
+-- Autocmd to set pwd as the opened folder dir
+vim.api.nvim_create_autocmd('VimEnter', {
+  desc = 'Set working directory as the opened directory',
+  group = vim.api.nvim_create_augroup('cdpwd', { clear = true }),
+  command = 'cd $PWD',
+})
 
 return config

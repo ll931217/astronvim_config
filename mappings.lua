@@ -23,7 +23,14 @@ return {
     ["<leader>Di"] = { "<cmd>lua require'dap'.step_into()<cr>", desc = "Step Into" },
     ["<leader>DO"] = { "<cmd>lua require'dap'.step_out()<cr>", desc = "Step Out" },
 
-    ["<leader>P"] = { "<cmd>lua require'telescope'.extensions.projects.projects{}<cr>", desc = "Projects Picker" }
+    ["<leader>P"] = { "<cmd>lua require'telescope'.extensions.projects.projects{}<cr>", desc = "Projects Picker" },
+
+    -- Buffers
+    ['<leader>b'] = { name = 'Buffers' },
+    ['L'] = { '<cmd>lua require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1)<cr>', desc = 'Next buffer' },
+    ['H'] = { '<cmd>lua require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1))<cr>', desc = 'Previous buffer' },
+    ['>'] = { '<cmd>lua require("astronvim.utils.buffer").move(vim.v.count > 0 and vim.v.count or 1)<cr>', desc = 'Move buffer tab right' },
+    ['<'] = { '<cmd>lua require("astronvim.utils.buffer").move(-(vim.v.count > 0 and vim.v.count or 1))<cr>', desc = 'Move buffer tab left'},
   },
   t = {
     -- setting a mapping to false will disable it
