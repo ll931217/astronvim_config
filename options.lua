@@ -1,7 +1,7 @@
 -- set vim options here (vim.<first_key>.<second_key> =  value)
 return {
   opt = {
-    relativenumber = true, -- sets vim.opt.relativenumber
+    relativenumber = false, -- sets vim.opt.relativenumber
     expandtab = true,
     shiftwidth = 4, -- Number of space inserted for indentation
     tabstop = 4,
