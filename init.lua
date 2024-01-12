@@ -7,7 +7,7 @@
 local config = {
   -- Set colorscheme to use
   -- colorscheme = "default_theme",
-  colorscheme = "catppuccin",
+  colorscheme = "catppuccin-mocha",
 
   -- Override highlight groups in any theme
   -- highlights = {

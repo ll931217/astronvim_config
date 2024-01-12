@@ -1,62 +1,4 @@
 return {
-  -- You can disable default plugins as follows:
-  -- ["Darazaki/indent-o-matic"] = { disable = true },
-
-  -- Flutter
-  {
-    'akinsho/flutter-tools.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim',
-      'stevearc/dressing.nvim',
-    }
-  },
-
-  -- FUN!!!
-  {
-    "catppuccin/nvim",
-    lazy = false,
-    as = "catppuccin",
-    config = function() require("catppuccin").setup() end,
-  },
-  {
-    'jackMort/ChatGPT.nvim',
-    event = 'VeryLazy',
-    config = function()
-      require('chatgpt').setup()
-    end,
-    requires = {
-      'MunifTanjim/nui.nvim',
-      'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope.nvim',
-    }
-  },
-  {
-    'ray-x/lsp_signature.nvim',
-    event = 'BufRead',
-    config = function() require('lsp_signature').setup() end,
-  },
-  {
-    'onsails/lspkind.nvim',
-    opts = function(_, opts)
-      -- use codicons preset
-      opts.preset = 'codicons'
-      -- set some missing symbol types
-      opts.symbol_map = {
-        Array = '',
-        Boolean = '',
-        Key = '',
-        Namespace = '',
-        Null = '',
-        Number = '',
-        Object = '',
-        Package = '',
-        String = '',
-      }
-      return opts
-    end,
-  },
-
-  -- Utility tools
   {
     'ahmedkhalf/project.nvim',
     config = function() require('user.configs.project') end,
@@ -94,4 +36,53 @@ return {
     end
   },
   { 'nvim-telescope/telescope-hop.nvim' },
+  {
+    'nvim-telescope/telescope.nvim',
+    config = function() require('user.configs.telescope') end,
+  },
+  {
+    'aserowy/tmux.nvim',
+    event = 'VeryLazy',
+    config = function()
+      require('tmux').setup()
+    end,
+  },
+  {
+    "epwalsh/obsidian.nvim",
+    version = "*",  -- recommended, use latest release instead of latest commit
+    lazy = true,
+    ft = "markdown",
+    -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
+    -- event = {
+    --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
+    --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
+    --   "BufReadPre path/to/my-vault/**.md",
+    --   "BufNewFile path/to/my-vault/**.md",
+    -- },
+    dependencies = {
+      -- Required.
+      "nvim-lua/plenary.nvim",
+
+      -- see below for full list of optional dependencies 👇
+    },
+    opts = {
+      mappings = {}, -- Disable default mappings
+      workspaces = {
+        {
+          name = "personal",
+          path = "~/vaults/personal",
+        },
+        {
+          name = "work",
+          path = "~/vaults/work",
+        },
+        {
+          name = "tutorial",
+          path = "~/vaults/tutorial",
+        },
+      },
+
+      -- see below for full list of options 👇
+    },
+  }
 }

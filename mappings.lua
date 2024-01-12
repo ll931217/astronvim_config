@@ -12,10 +12,12 @@ return {
     ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
     ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
     ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
+
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     ["<leader><leader>w"] = { "<cmd>HopWord<cr>", desc = "Hop Word" },
     ["<leader><leader>c"] = { "<cmd>HopChar1<cr>", desc = "Hop Character" },
+
     -- DAP Client debugger
     ["<leader>Db"] = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", desc = "Create breakpoint" },
     ["<leader>Dc"] = { "<cmd>lua require'dap'.continue()<cr>", desc = "Continue" },
@@ -31,6 +33,16 @@ return {
     ['H'] = { '<cmd>lua require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1))<cr>', desc = 'Previous buffer' },
     ['>'] = { '<cmd>lua require("astronvim.utils.buffer").move(vim.v.count > 0 and vim.v.count or 1)<cr>', desc = 'Move buffer tab right' },
     ['<'] = { '<cmd>lua require("astronvim.utils.buffer").move(-(vim.v.count > 0 and vim.v.count or 1))<cr>', desc = 'Move buffer tab left'},
+
+    -- AI
+    ['<leader>a'] = { name = 'AI' },
+    ['<leader>ac'] = { '<cmd>ChatGPT<cr>', desc = 'ChatGPT' },
+    ['<leader>ag'] = { '<cmd>Gen<cr>', desc = 'Gen' },
+    ['<leader>ao'] = { name = 'Ollama' },
+    ['<leader>aoc'] = { name = 'Ollama Chat' },
+    ['<leader>aop'] = { name = 'Ollama Prompt' },
+
+    [';'] = { ':', desc = 'Enter command mode' },
   },
   t = {
     -- setting a mapping to false will disable it
