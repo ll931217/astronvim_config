@@ -48,6 +48,7 @@ local config = {
 }
 
 require('user.neovide')
+vim.opt.conceallevel = 2
 
 -- Autocmd to set pwd as the opened folder dir
 vim.api.nvim_create_autocmd('VimEnter', {

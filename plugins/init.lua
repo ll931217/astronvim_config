@@ -69,16 +69,8 @@ return {
       mappings = {}, -- Disable default mappings
       workspaces = {
         {
-          name = "personal",
-          path = "~/vaults/personal",
-        },
-        {
-          name = "work",
-          path = "~/vaults/work",
-        },
-        {
-          name = "tutorial",
-          path = "~/vaults/tutorial",
+          name = "second_brain",
+          path = "~/vaults/second_brain",
         },
       },
 

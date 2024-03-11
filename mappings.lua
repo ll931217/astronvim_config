@@ -44,9 +44,11 @@ return {
 
     [';'] = { ':', desc = 'Enter command mode' },
     ['<leader>x'] = { function() require("astronvim.utils.buffer").close() end, desc = "Close buffer" },
+    ['<A-i>'] = { "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" },
     ['<leader>c'] = false,
   },
   t = {
+    ['<A-i>'] = { "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" },
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
   },
