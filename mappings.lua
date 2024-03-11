@@ -43,6 +43,8 @@ return {
     ['<leader>aop'] = { name = 'Ollama Prompt' },
 
     [';'] = { ':', desc = 'Enter command mode' },
+    ['<leader>x'] = { function() require("astronvim.utils.buffer").close() end, desc = "Close buffer" },
+    ['<leader>c'] = false,
   },
   t = {
     -- setting a mapping to false will disable it
