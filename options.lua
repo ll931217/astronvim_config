@@ -3,8 +3,8 @@ return {
   opt = {
     relativenumber = false, -- sets vim.opt.relativenumber
     expandtab = true,
-    shiftwidth = 4, -- Number of space inserted for indentation
-    tabstop = 4,
+    shiftwidth = 2, -- Number of space inserted for indentation
+    tabstop = 2,
     number = true, -- sets vim.opt.number
     spell = false, -- sets vim.opt.spell
     signcolumn = "auto", -- sets vim.opt.signcolumn to auto
