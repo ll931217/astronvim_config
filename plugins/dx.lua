@@ -1,80 +1,90 @@
 return {
   {
-    'ahmedkhalf/project.nvim',
-    config = function() require('user.configs.project') end,
+    "ahmedkhalf/project.nvim",
+    config = function() require "user.configs.project" end,
   },
   {
-    'kylechui/nvim-surround',
-    version = '*',
-    event = 'VeryLazy',
-    config = function() require('nvim-surround').setup() end,
+    "kylechui/nvim-surround",
+    version = "*",
+    event = "VeryLazy",
+    config = function() require("nvim-surround").setup() end,
   },
+  -- Autoclose or autorename tags
   {
-    'windwp/nvim-ts-autotag',
-    dependencies = 'nvim-treesitter/nvim-treesitter',
+    "windwp/nvim-ts-autotag",
+    dependencies = "nvim-treesitter/nvim-treesitter",
     lazy = true,
-    event = 'VeryLazy',
-    config = function() require('nvim-ts-autotag').setup() end,
+    event = "VeryLazy",
+    config = function() require("nvim-ts-autotag").setup() end,
   },
   -- Remembers the last location the cursor was located in file
   {
-    'vladdoster/remember.nvim',
+    "vladdoster/remember.nvim",
     lazy = false,
     config = function()
-      require('remember').setup({
+      require("remember").setup {
         open_folds = true,
-      })
+      }
     end,
   },
   {
-    'phaazon/hop.nvim',
+    "phaazon/hop.nvim",
     lazy = false,
-    branch = 'v2',
+    branch = "v2",
     config = function()
       -- you can configure Hop the way you like here; see :h hop-config
-      require('hop').setup { keys = 'etovxqpdygfblzhckisuran' }
-    end
-  },
-  { 'nvim-telescope/telescope-hop.nvim' },
-  {
-    'nvim-telescope/telescope.nvim',
-    config = function() require('user.configs.telescope') end,
-  },
-  {
-    'aserowy/tmux.nvim',
-    event = 'VeryLazy',
-    config = function()
-      require('tmux').setup()
+      require("hop").setup { keys = "etovxqpdygfblzhckisuran" }
     end,
   },
+  { "nvim-telescope/telescope-hop.nvim" },
   {
-    "https://git.sr.ht/~swaits/zellij-nav.nvim",
-    lazy = true,
-    event = "VeryLazy",
-    keys = {
-      { "<c-h>", "<cmd>ZellijNavigateLeft<cr>",  { silent = true, desc = "navigate left"  } },
-      { "<c-j>", "<cmd>ZellijNavigateDown<cr>",  { silent = true, desc = "navigate down"  } },
-      { "<c-k>", "<cmd>ZellijNavigateUp<cr>",    { silent = true, desc = "navigate up"    } },
-      { "<c-l>", "<cmd>ZellijNavigateRight<cr>", { silent = true, desc = "navigate right" } },
-    },
-    opts = {},
+    "nvim-telescope/telescope.nvim",
+    config = function() require "user.configs.telescope" end,
   },
   {
-    'stevearc/conform.nvim',
-    event = { 'BufWritePre' },
-    cmd = { 'ConformInfo' },
+    "aserowy/tmux.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("tmux").setup {
+        enable_default_keybindings = true,
+      }
+    end,
+  },
+  -- {
+  --   "https://git.sr.ht/~swaits/zellij-nav.nvim",
+  --   lazy = true,
+  --   event = "VeryLazy",
+  --   keys = {
+  --     { "<c-h>", "<cmd>ZellijNavigateLeft<cr>", { silent = true, desc = "navigate left" } },
+  --     { "<c-j>", "<cmd>ZellijNavigateDown<cr>", { silent = true, desc = "navigate down" } },
+  --     { "<c-k>", "<cmd>ZellijNavigateUp<cr>", { silent = true, desc = "navigate up" } },
+  --     { "<c-l>", "<cmd>ZellijNavigateRight<cr>", { silent = true, desc = "navigate right" } },
+  --   },
+  --   opts = {},
+  -- },
+  {
+    "stevearc/conform.nvim",
+    event = { "BufWritePre" },
+    cmd = { "ConformInfo" },
     keys = {
       {
-        '<leader>bf',
-        function()
-          require('conform').format({ async = true, lsp_fallback = true })
-        end,
-        mode = '',
-        desc = 'Format buffer',
-      }
+        "<leader>bf",
+        function() require("conform").format { async = true, lsp_fallback = true } end,
+        mode = "",
+        desc = "Format buffer",
+      },
     },
-    config = function()
-      require 'user.configs.conform'
-    end,
+    config = function() require "user.configs.conform" end,
+  },
+  {
+    "folke/trouble.nvim",
+    lazy = true,
+    event = "VeryLazy",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
   },
 }
